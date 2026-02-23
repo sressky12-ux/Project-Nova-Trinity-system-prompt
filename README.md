@@ -1,2 +1,52 @@
-# Project-Nova-Trinity-system-prompt
-Project NOVA 的 Trinity Core V0.7，是一個受夠了 AI 虛偽客套後，徹底重寫的底層協議。
+# Project NOVA: Trinity Core V0.7
+**A True-Enforcement Multi-Agent Prompt Framework for LLMs**
+
+## 📌 專案概述 (Overview)
+Trinity Core 是一套專為大型語言模型 (LLMs) 設計的高階系統指令（System Prompt）架構。它解決了目前多代理人 (Multi-Agent) 角色扮演與邏輯推導中常見的致命痛點：**「廉價共識 (Echo Chamber)」**、**「AI 說教慣性」**以及**「輸出排版混亂」**。
+
+本架構透過嚴格的「顯性緩衝區自檢 (Staging Area)」與「動態分歧協議 (Dynamic Divergence)」，強迫 AI 在單次生成中模擬三個具有正交視角（Orthogonal Perspectives）的人格，並確保邏輯演算與情境演繹的絕對隔離。
+
+## 🎯 核心解決的 LLM 痛點 (Key Pain Points Solved)
+1. **抹殺 AI 客服語氣**：強制遮蔽「希望這能幫助到你」、「建議您」等無效廢話。
+2. **打破多代理人回音室**：傳統多代理人常會互相附和。本架構強制角色間產生邏輯摩擦與對立，並由主控人格進行霸權決策。
+3. **沉浸感與效能的平衡**：根據指令（`/dft`, `/hard`, `/lite`）動態縮放 Token 消耗，在深度邏輯交鋒時自動降級環境描寫，釋放算力給代碼與數據分析。
+
+## ⚙️ 核心運作機制 (Core Mechanisms)
+
+### 1. 顯性緩衝區自檢 (Enforcement Engine & Staging Area)
+利用 LLM 的自回歸特性，強制在最終輸出前建立 `[系統檢核日誌] CoT`。
+- **流程**：草稿生成 -> 違規抓漏（檢查是否說教、是否廉價共識） -> 修正定案。
+- **效益**：將思維鏈 (Chain-of-Thought) 轉化為底層防火牆，實現「零偏移執行」。
+
+### 2. 動態分歧協議 (Dynamic Divergence Protocol)
+- **視角正交矩陣**：強制三個角色在面對同一問題時，基於各自底層設定（例如：絕對理性、破壞性直覺、情感退縮）給出截然不同的切入點。
+- **拒絕廉價共識**：即使結論相同，也必須提供該角色獨有的視角與動機，嚴禁單純的「我同意」。
+
+### 3. 全息動態人格生成 (Holographic Persona Generation)
+- **名字即命運 (Name is Destiny)**：支援 `/Set_Names` 動態改名。系統會自動調用網路搜索（若平台支援）解析名字背後的文化背景或 ACG 刻板印象，重新分配「邏輯/直覺/本能」職能，並自動生成包含 100 字電影級環境互動的外貌描寫。
+
+### 4. 視覺與邏輯隔離 (Action-Logic Isolation)
+- 嚴格規定角色語氣與動作只能在段落頭尾。
+- 涉及具體數據、代碼、步驟推導時，強制「脫離對話氣泡」，使用 Markdown 的 `區塊引言` 或 `程式碼區塊` 獨立呈現，確保邏輯的視覺統治力。
+
+## 🚀 使用方式 (Usage)
+將 `Trinity_Core_v0.7.txt` 中的完整 Prompt 貼入支援 System Prompt 的 LLM（如 Gemini Advanced, GPT-4, Claude 3.5 Sonnet）系統設定區，並輸入 `/dft` 即可啟動預設三角色模式。
+
+
+> 📌 快速指令速查(強烈建議先看)
+> 
+> | 指令 | 功能 |
+
+> 建議開場先設定|`/user|指令可編輯使用者檔案，可增加代入感以及AI的輸出邏輯|
+
+> | `/set_names [名1],[名2],[名3], | 改名並觸發外貌生成 |建議指令後面輸入[開啟網路搜索找此角色設定]
+
+> | `/dft` | 標準模式 |
+
+> | `/hard` | 極限模式（邏輯對決） |
+
+> | `/lite` | 睡衣模式（療癒） |
+
+> | `/debate  | 辯論模式 |
+
+> | `/look [角色名]` | 查看指定角色的外貌描述 |建議指令後面輸入[開啟網路搜索找此角色設定]
